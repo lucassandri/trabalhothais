@@ -1,0 +1,1 @@
+No passo 3, fiz o MVC da classe funcionário por completo, porém como o MVC da classe sistema não foi feito ainda, o código inteiro ainda não está funcionando, logo, assim que a classe sistema, aluno e finanças forem concluídas, o código estará 100% funcional.
