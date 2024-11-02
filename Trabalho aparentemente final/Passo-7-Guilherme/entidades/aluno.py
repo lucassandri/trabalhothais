@@ -10,7 +10,7 @@ class Aluno(Pessoa):
         self.__serie = serie
         self.__bolsa = bolsa
         self.__mensalidade = mensalidade
-        self.__boletim = None
+        self.__boletim = boletim
 
     @property
     def matricula(self):
