@@ -83,7 +83,7 @@ class ControladorFinancas(ControladorAbstrato):
             else:
                 self.__tela_financas.mostra_mensagem("Não há alunos com bolsas")
 
-    def excluir_financa(self):
+    def excluir_basicas(self):
         if len(self.__financa) == 1:
             self.__financa.remove(self.__financa[0])
         else:
@@ -91,7 +91,7 @@ class ControladorFinancas(ControladorAbstrato):
 
 
     def abre_tela(self):
-        lista_opcoes = {1: self.cadastrar_basicas, 2: self.alterar_basicas, 3: self.mostrar_trabalhadores, 4: self.mostrar_basicas, 5: self.mostrar_todas_despesas, 6: self.mostrar_lucro, 7: self.mostrar_faturamento, 8: self.alunos_bolsistas, 9: self.excluir_financa, 0: self.retornar}
+        lista_opcoes = {1: self.cadastrar_basicas, 2: self.alterar_basicas, 3: self.mostrar_trabalhadores, 4: self.mostrar_basicas, 5: self.mostrar_todas_despesas, 6: self.mostrar_lucro, 7: self.mostrar_faturamento, 8: self.alunos_bolsistas, 9: self.excluir_basicas, 0: self.retornar}
         continua = True
         while continua:
             lista_opcoes[self.__tela_financas.tela_opcoes()]()
