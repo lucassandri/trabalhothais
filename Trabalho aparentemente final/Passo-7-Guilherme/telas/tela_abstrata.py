@@ -5,6 +5,10 @@ class TelaAbstrata(ABC):
     def __init__(self):
         pass
 
+    @abstractmethod
+    def tela_opcoes(self):
+        pass
+    
     def le_num_inteiro(self, mensagem=" ", ints_validos = None):
         while True:
             valor_lido = input(mensagem)
