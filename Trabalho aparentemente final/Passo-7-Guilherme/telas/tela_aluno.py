@@ -17,7 +17,7 @@ class TelaAluno(TelaAbstrata):
             except ValueError:
                 print("Valor incorreto! Insira um valor de 0 a 10")
 
-    def le_frequencia(self, mensagem=" ", ints_validos = None):
+    def le_frequencia(self, mensagem=" "):
         while True:
             valor_lido = input(mensagem)
             try:
