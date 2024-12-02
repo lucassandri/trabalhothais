@@ -78,10 +78,9 @@ class TelaProfessor(TelaAbstrata):
 
     def mostra_professor(self, dados_professor):
         string_todos_professores = ""
-        string_todos_professores = string_todos_professores + "NOME DO PROFESSOR: " + str(dados_professor["nome"]) + '\n'
-        string_todos_professores = string_todos_professores + "SALÁRIO DO PROFESSOR: " + str(dados_professor["salario"]) + '\n'
-        string_todos_professores = string_todos_professores + "MATÉRIA QUE PROFESSOR LECIONA: " + str(dados_professor["leciona"]) + '\n'
-        string_todos_professores = string_todos_professores + "EMAIL DO PROFESSOR: " + str(dados_professor["email"]) + '\n\n'
-
-
+        for dado in dados_professor:
+            string_todos_professores = string_todos_professores + "NOME DO PROFESSOR: " + str(dado["nome"]) + '\n'
+            string_todos_professores = string_todos_professores + "SALÁRIO DO PROFESSOR: " + str(dado["salario"]) + '\n'
+            string_todos_professores = string_todos_professores + "MATÉRIA QUE PROFESSOR LECIONA: " + str(dado["leciona"]) + '\n'
+            string_todos_professores = string_todos_professores + "EMAIL DO PROFESSOR: " + str(dado["email"]) + '\n\n'
         sg.Popup('-------- LISTA DE PROFESSORES ----------', string_todos_professores)
