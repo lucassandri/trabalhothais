@@ -65,13 +65,14 @@ class TelaAluno(TelaAbstrata):
 
     def mostra_aluno(self, dados_aluno):
         string_todos_alunos = ""
-        string_todos_alunos = string_todos_alunos + "NOME DO ALUNO: " + str(dados_aluno["nome"]) + '\n'
-        string_todos_alunos = string_todos_alunos + "MATRICULA DO ALUNO: " + str(dados_aluno["matricula"]) + '\n'
-        string_todos_alunos = string_todos_alunos + "RESPONSAVEL DO ALUNO: " + str(dados_aluno["responsavel"]) + '\n'
-        string_todos_alunos = string_todos_alunos + "SÉRIE DO ALUNO: " + str(dados_aluno["serie"]) + '\n'
-        string_todos_alunos = string_todos_alunos + "ALUNO BOLSISTA: " + str(dados_aluno["bolsa"]) + '\n'
-        string_todos_alunos = string_todos_alunos + "MENSALIDADE DO ALUNO: " + str(dados_aluno["mensalidade"]) + '\n'
-        string_todos_alunos = string_todos_alunos + "BOLETIM DO ALUNO: " + str(dados_aluno["boletim"]) + '\n\n'
+        for dado in dados_aluno:
+            string_todos_alunos = string_todos_alunos + "NOME DO ALUNO: " + str(dado["nome"]) + '\n'
+            string_todos_alunos = string_todos_alunos + "MATRICULA DO ALUNO: " + str(dado["matricula"]) + '\n'
+            string_todos_alunos = string_todos_alunos + "RESPONSAVEL DO ALUNO: " + str(dado["responsavel"]) + '\n'
+            string_todos_alunos = string_todos_alunos + "SÉRIE DO ALUNO: " + str(dado["serie"]) + '\n'
+            string_todos_alunos = string_todos_alunos + "ALUNO BOLSISTA: " + str(dado["bolsa"]) + '\n'
+            string_todos_alunos = string_todos_alunos + "MENSALIDADE DO ALUNO: " + str(dado["mensalidade"]) + '\n'
+            string_todos_alunos = string_todos_alunos + "BOLETIM DO ALUNO: " + str(dado["boletim"]) + '\n\n'
         sg.Popup('-------- LISTA DE ALUNOS ----------', string_todos_alunos)
 
     def pega_dados_aluno(self):
