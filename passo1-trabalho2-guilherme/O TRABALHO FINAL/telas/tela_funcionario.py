@@ -78,10 +78,9 @@ class TelaFuncionario(TelaAbstrata):
 
     def mostra_funcionario(self, dados_funcionario):
         string_todos_funcionarios = ""
-        string_todos_funcionarios = string_todos_funcionarios + "NOME DO FUNCIONÁRIO: " + str(dados_funcionario["nome"]) + '\n'
-        string_todos_funcionarios = string_todos_funcionarios + "CARGO DO FUNCIONÁRIO: " + str(dados_funcionario["cargo"]) + '\n'
-        string_todos_funcionarios = string_todos_funcionarios + "SALÁRIO DO FUNCIONÁRIO: " + str(dados_funcionario["salario"]) + '\n'
-        string_todos_funcionarios = string_todos_funcionarios + "EMAIL DO FUNCIONÁRIO: " + str(dados_funcionario["email"]) + '\n\n'
-
-
+        for dado in dados_funcionario:
+            string_todos_funcionarios = string_todos_funcionarios + "NOME DO FUNCIONÁRIO: " + str(dado["nome"]) + '\n'
+            string_todos_funcionarios = string_todos_funcionarios + "CARGO DO FUNCIONÁRIO: " + str(dado["cargo"]) + '\n'
+            string_todos_funcionarios = string_todos_funcionarios + "SALÁRIO DO FUNCIONÁRIO: " + str(dado["salario"]) + '\n'
+            string_todos_funcionarios = string_todos_funcionarios + "EMAIL DO FUNCIONÁRIO: " + str(dado["email"]) + '\n\n'
         sg.Popup('-------- LISTA DE FUNCIONÁRIOS ----------', string_todos_funcionarios)
