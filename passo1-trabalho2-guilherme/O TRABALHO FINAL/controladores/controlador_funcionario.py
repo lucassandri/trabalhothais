@@ -47,8 +47,10 @@ class ControladorFuncionario(ControladorAbstrato):
             self.__tela_funcionario.mostra_mensagem("Atenção! Não existem funcionários cadastrados no sistema!")
             return None
         else:
-            for funcionario in self.__funcionarios:
-                self.__tela_funcionario.mostra_funcionario({"nome": funcionario.nome, "cargo": funcionario.cargo, "salario": funcionario.salario, "email": funcionario.email})
+            dados_funcionarios = []
+            for dado in dados_funcionarios:
+                dados_funcionarios.append({"nome": funcionario.nome, "cargo": funcionario.cargo, "salario": funcionario.salario, "email": funcionario.email})
+            self.__tela_funcionario.mostra_funcionario(dados_funcionarios)
 
     def excluir_funcionario(self):
         email_funcionario = self.__tela_funcionario.seleciona_funcionario()
