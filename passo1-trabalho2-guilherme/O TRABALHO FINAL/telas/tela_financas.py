@@ -6,12 +6,8 @@ class TelaFinancas(TelaAbstrata):
     def __init__(self):
         pass
 
-    def init_opcoes(self):
-        pass
-
     def init_components(self):
         pass
-
 
     def tela_opcoes(self):
         print('--------FINANÇAS--------')
