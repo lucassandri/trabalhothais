@@ -51,8 +51,10 @@ class ControladorProfessor(ControladorAbstrato):
             self.__tela_professor.mostra_mensagem("Atenção! Não existem professores cadastrados no sistema!")
             return None
         else:
+            dados_professores = []
             for professor in self.__professores:
-                self.__tela_professor.mostra_professor({"nome": professor.nome, "salario":  professor.salario, "leciona": professor.leciona, "email": professor.email})
+                dados_professores.append({"nome": professor.nome, "salario":  professor.salario, "leciona": professor.leciona, "email": professor.email})
+            self.__tela_professor.mostra_professor(dados_professor)
 
     def excluir_professor(self):
         email_professor = self.__tela_professor.seleciona_professor()
