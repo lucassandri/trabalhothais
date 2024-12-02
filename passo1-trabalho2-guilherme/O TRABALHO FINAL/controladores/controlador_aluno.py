@@ -127,8 +127,10 @@ class ControladorAluno(ControladorAbstrato):
             self.__tela_aluno.mostra_mensagem("Atenção! Não existem alunos cadastrados no sistema!")
             return None
         else:
+            dados_alunos = []
             for aluno in self.__alunos:
-                self.__tela_aluno.mostra_aluno({"nome": aluno.nome, "matricula": aluno.matricula, "responsavel": aluno.responsavel, "serie": aluno.serie, "bolsa": aluno.bolsa, "mensalidade": aluno.mensalidade, "boletim": aluno.boletim})
+                dados_alunos.append({"nome": aluno.nome, "matricula": aluno.matricula, "responsavel": aluno.responsavel, "serie": aluno.serie, "bolsa": aluno.bolsa, "mensalidade": aluno.mensalidade, "boletim": aluno.boletim})
+            self.__tela_aluno.mostra_aluno(dados_alunos)
 
     def excluir_aluno(self):
         matricula_aluno = self.__tela_aluno.seleciona_aluno()
