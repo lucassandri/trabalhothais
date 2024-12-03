@@ -39,26 +39,26 @@ class ControladorFinancas(ControladorAbstrato):
     
     def mostrar_basicas(self):
         if len(self.__financa) == 1:
-            valor = self.despesas_basicas()
-            self.__tela_financas.mostra_basicas(valor)
+            basicas = self.despesas_basicas()
+            self.__tela_financas.mostra_basicas(basicas)
         else:
             self.__tela_financas.mostra_mensagem("Atenção! Você precisa cadastradar as despesas básicas para acessar esse campo!")
     
     def mostrar_todas_despesas(self):
-        valor = self.despesa_escola()
-        self.__tela_financas.mostra_despesa(valor)
+        todas = self.despesa_escola()
+        self.__tela_financas.mostra_despesa(todas)
     
     def mostrar_lucro(self):
-        valor = self.lucro_escola()
-        self.__tela_financas.mostra_lucro(valor)
+        lucro = self.lucro_escola()
+        self.__tela_financas.mostra_lucro(lucro)
     
     def mostrar_faturamento(self):
-        valor = self.faturamento_escola()
-        self.__tela_financas.mostra_faturamento(valor)
+        faturamento = self.faturamento_escola()
+        self.__tela_financas.mostra_faturamento(faturamento)
 
     
     def alunos_bolsistas(self):
-        if self._controlador_sistema.controlador_aluno.alunos == 0:
+        if len(self._controlador_sistema.controlador_aluno.alunos) == 0:
             self.__tela_financas.mostra_mensagem("Atenção! Nenhum aluno está cadastrado no sistema!")
             return None
         else:
@@ -68,6 +68,7 @@ class ControladorFinancas(ControladorAbstrato):
                     soma += 1
             if soma > 0:
                 porcentagem = float(soma / len(self._controlador_sistema.controlador_aluno.alunos)) * 100
+                porcentagem = f"{porcentagem:.2f}"
                 self.__tela_financas.mostra_bolsistas(porcentagem)
                 return None
             else:
@@ -94,10 +95,10 @@ class ControladorFinancas(ControladorAbstrato):
                     despesa += professor.salario
                 for funcionario in self._controlador_sistema.controlador_funcionario.funcionarios:
                     despesa += funcionario.salario
-                despesa += dados_despesas["agua"]
-                despesa += dados_despesas["luz"]
-                despesa += dados_despesas["internet"]
-                despesa += dados_despesas["estrutura"]
+                despesa += int(dados_despesas["agua"])
+                despesa += int(dados_despesas["luz"])
+                despesa += int(dados_despesas["internet"])
+                despesa += int(dados_despesas["estrutura"])
                 return despesa
         else:
             self.__tela_financas.mostra_mensagem("Atenção! Você precisa cadastradar as despesas básicas para acessar esse campo!")
@@ -107,10 +108,10 @@ class ControladorFinancas(ControladorAbstrato):
             for financa in self.__financa:
                 dados_despesas = {"agua": financa.despesas_agua, "luz": financa.despesas_luz, "internet": financa.despesas_internet, "estrutura": financa.despesas_estrutura}
                 despesa = 0
-                despesa += dados_despesas["agua"]
-                despesa += dados_despesas["luz"]
-                despesa += dados_despesas["internet"]
-                despesa += dados_despesas["estrutura"]
+                despesa += int(dados_despesas["agua"])
+                despesa += int(dados_despesas["luz"])
+                despesa += int(dados_despesas["internet"])
+                despesa += int(dados_despesas["estrutura"])
                 return despesa
         else:
             self.__tela_financas.mostra_mensagem("Atenção! Você precisa cadastradar as despesas básicas para acessar esse campo!")
